@@ -44,11 +44,15 @@ public class BeatBoxFragment extends Fragment {
         private SoundHolder(ListItemSoundBinding binding){
             super(binding.getRoot());
             mBinding = binding;
-            mBinding.setViewModel(new SoundViewModel(mBeatBox));
+            //NOTE: problems with databinging. Cannot implement setViewModel() on mBidining.
+            ///Maybe problem with dependecies?
+            
+            //mBinding.setViewModel(new SoundViewModel(mBeatBox));
         }
 
         public void bind(Sound sound){
-            mBinding.getViewModel().getSound(sound);
+            //NOTE: problems with databinging. Cannot implement getViewModel() on mBidining.
+            //mBinding.getViewModel().getSound(sound);
             mBinding.executePendingBindings();
         }
     }
